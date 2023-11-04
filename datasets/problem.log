@@ -1,0 +1,316 @@
+root - INFO - Crawl page https://codeforces.com/problemset
+root - INFO - 0, id dark left, 1895G
+root - INFO - 1, dark, Two Characters, Two Colors
+binary search, data structures, dp, flows, geometry
+root - INFO - 3, dark, 
+root - INFO - 4, dark right,  x20
+root - INFO - 0, id left, 1895F
+root - INFO - 1, , Fancy Arrays
+combinatorics, math, matrices
+root - INFO - 3, , 
+root - INFO - 4, right,  x121
+root - INFO - 0, id dark left, 1895E
+root - INFO - 1, dark, Infinite Card Game
+brute force, dfs and similar, games, graphs, greedy, sortings
+root - INFO - 3, dark, 
+root - INFO - 4, dark right,  x549
+root - INFO - 0, id left, 1895D
+root - INFO - 1, , XOR Construction
+bitmasks, constructive algorithms, data structures, math, trees
+root - INFO - 3, , 
+root - INFO - 4, right,  x2071
+root - INFO - 0, id dark left, 1895C
+root - INFO - 1, dark, Torn Lucky Ticket
+brute force, dp, hashing, implementation, math
+root - INFO - 3, dark, 
+root - INFO - 4, dark right,  x4969
+root - INFO - 0, id left, 1895B
+root - INFO - 1, , Points and Minimum Distance
+greedy, math, sortings
+root - INFO - 3, , 
+root - INFO - 4, right,  x12963
+root - INFO - 0, id dark left, 1895A
+root - INFO - 1, dark, Treasure Chest
+math
+root - INFO - 3, dark, 
+root - INFO - 4, dark right,  x15028
+root - INFO - 0, id left, 1891F
+root - INFO - 1, , A Growing Tree
+data structures, dfs and similar, trees
+root - INFO - 3, , 
+root - INFO - 4, right,  x2244
+root - INFO - 0, id dark left, 1891E
+root - INFO - 1, dark, Brukhovich and Exams
+brute force, greedy, implementation, math, sortings
+root - INFO - 3, dark, 
+root - INFO - 4, dark right,  x432
+root - INFO - 0, id left, 1891D
+root - INFO - 1, , Suspicious logarithms
+binary search, brute force, implementation, math, number theory
+root - INFO - 3, , 
+root - INFO - 4, right,  x2542
+root - INFO - 0, id dark left, 1891C
+root - INFO - 1, dark, Smilo and Monsters
+binary search, constructive algorithms, greedy, sortings, two pointers
+root - INFO - 3, dark, 
+root - INFO - 4, dark right,  x7124
+root - INFO - 0, id left, 1891B
+root - INFO - 1, , Deja Vu
+brute force, math, sortings
+root - INFO - 3, , 
+root - INFO - 4, right,  x10957
+root - INFO - 0, id dark left, 1891A
+root - INFO - 1, dark, Sorting with Twos
+constructive algorithms, sortings
+root - INFO - 3, dark, 
+root - INFO - 4, dark right,  x14581
+root - INFO - 0, id left, 1890B
+root - INFO - 1, , Qingshan Loves Strings
+constructive algorithms, implementation
+root - INFO - 3, , 
+root - INFO - 4, right,  x13475
+root - INFO - 0, id dark left, 1890A
+root - INFO - 1, dark, Doremy's Paint 3
+constructive algorithms
+root - INFO - 3, dark, 
+root - INFO - 4, dark right,  x14523
+root - INFO - 0, id left, 1889F
+root - INFO - 1, , Doremy's Average Tree
+data structures, dp, greedy, trees
+root - INFO - 3, , 
+root - INFO - 4, right,  x20
+root - INFO - 0, id dark left, 1889E
+root - INFO - 1, dark, Doremy's Swapping Trees
+dfs and similar, graphs, trees
+root - INFO - 3, dark, 
+root - INFO - 4, dark right,  x16
+root - INFO - 0, id left, 1889D
+root - INFO - 1, , Game of Stacks
+brute force, dfs and similar, graphs, implementation, trees
+root - INFO - 3, , 
+root - INFO - 4, right,  x290
+root - INFO - 0, id dark left, 1889C2
+root - INFO - 1, dark, Doremy's Drying Plan (Hard Version)
+data structures, dp
+root - INFO - 3, dark, 
+root - INFO - 4, dark right,  x526
+root - INFO - 0, id left, 1889C1
+root - INFO - 1, , Doremy's Drying Plan (Easy Version)
+brute force, data structures, dp, greedy, sortings
+root - INFO - 3, , 
+root - INFO - 4, right,  x2107
+root - INFO - 0, id dark left, 1889B
+root - INFO - 1, dark, Doremy's Connecting Plan
+constructive algorithms, greedy, math, sortings
+root - INFO - 3, dark, 
+root - INFO - 4, dark right,  x4806
+root - INFO - 0, id left, 1889A
+root - INFO - 1, , Qingshan Loves Strings 2
+constructive algorithms, greedy, implementation
+root - INFO - 3, , 
+root - INFO - 4, right,  x8827
+root - INFO - 0, id dark left, 1887F
+root - INFO - 1, dark, Minimum Segments
+constructive algorithms
+root - INFO - 3, dark, 
+root - INFO - 4, dark right,  x70
+root - INFO - 0, id left, 1887E
+root - INFO - 1, , Good Colorings
+binary search, constructive algorithms, graphs, interactive
+root - INFO - 3, , 
+root - INFO - 4, right,  x152
+root - INFO - 0, id dark left, 1887D
+root - INFO - 1, dark, Split
+binary search, data structures, divide and conquer, dsu, math, trees, two pointers
+root - INFO - 3, dark, 
+root - INFO - 4, dark right,  x510
+root - INFO - 0, id left, 1887C
+root - INFO - 1, , Minimum Array
+binary search, brute force, constructive algorithms, data structures, greedy, hashing, two pointers
+root - INFO - 3, , 
+root - INFO - 4, right,  x998
+root - INFO - 0, id dark left, 1887B
+root - INFO - 1, dark, Time Travel
+binary search, graphs, shortest paths
+root - INFO - 3, dark, 
+root - INFO - 4, dark right,  x1759
+root - INFO - 0, id left, 1886F
+root - INFO - 1, , Diamond Theft
+data structures, greedy
+root - INFO - 3, , 
+root - INFO - 4, right,  x114
+root - INFO - 0, id dark left, 1886E
+root - INFO - 1, dark, I Wanna be the Team Leader
+bitmasks, constructive algorithms, dp, greedy, math, sortings, two pointers
+root - INFO - 3, dark, 
+root - INFO - 4, dark right,  x1036
+root - INFO - 0, id left, 1886D
+root - INFO - 1, , Monocarp and the Set
+combinatorics, data structures, math
+root - INFO - 3, , 
+root - INFO - 4, right,  x2703
+root - INFO - 0, id dark left, 1886C
+root - INFO - 1, dark, Decreasing String
+implementation, strings
+root - INFO - 3, dark, 
+root - INFO - 4, dark right,  x7860
+root - INFO - 0, id left, 1886B
+root - INFO - 1, , Fear of the Dark
+binary search, geometry, math
+root - INFO - 3, , 
+root - INFO - 4, right,  x12250
+root - INFO - 0, id dark left, 1886A
+root - INFO - 1, dark, Sum of Three
+brute force, constructive algorithms, math
+root - INFO - 3, dark, 
+root - INFO - 4, dark right,  x20693
+root - INFO - 0, id left, 1884E
+root - INFO - 1, , Hard Design
+greedy, implementation, math
+root - INFO - 3, , 
+root - INFO - 4, right,  x143
+root - INFO - 0, id dark left, 1884D
+root - INFO - 1, dark, Counting Rhyme
+dp, math, number theory
+root - INFO - 3, dark, 
+root - INFO - 4, dark right,  x1806
+root - INFO - 0, id left, 1884C
+root - INFO - 1, , Medium Design
+brute force, data structures, dp, greedy, sortings
+root - INFO - 3, , 
+root - INFO - 4, right,  x3761
+root - INFO - 0, id dark left, 1884B
+root - INFO - 1, dark, Haunted House
+binary search, greedy, math, two pointers
+root - INFO - 3, dark, 
+root - INFO - 4, dark right,  x8803
+root - INFO - 0, id left, 1884A
+root - INFO - 1, , Simple Design
+brute force, greedy, math
+root - INFO - 3, , 
+root - INFO - 4, right,  x13142
+root - INFO - 0, id dark left, 1883G2
+root - INFO - 1, dark, Dances (Hard Version)
+binary search, greedy, sortings, two pointers
+root - INFO - 3, dark, 
+root - INFO - 4, dark right,  x3388
+root - INFO - 0, id left, 1883G1
+root - INFO - 1, , Dances (Easy version)
+binary search, greedy, two pointers
+root - INFO - 3, , 
+root - INFO - 4, right,  x5702
+root - INFO - 0, id dark left, 1883F
+root - INFO - 1, dark, You Are So Beautiful
+data structures
+root - INFO - 3, dark, 
+root - INFO - 4, dark right,  x4945
+root - INFO - 0, id left, 1883E
+root - INFO - 1, , Look Back
+bitmasks, greedy
+root - INFO - 3, , 
+root - INFO - 4, right,  x4557
+root - INFO - 0, id dark left, 1883D
+root - INFO - 1, dark, In Love
+data structures, greedy
+root - INFO - 3, dark, 
+root - INFO - 4, dark right,  x6373
+root - INFO - 0, id left, 1883C
+root - INFO - 1, , Raspberries
+dp, math
+root - INFO - 3, , 
+root - INFO - 4, right,  x14843
+root - INFO - 0, id dark left, 1883B
+root - INFO - 1, dark, Chemistry
+strings
+root - INFO - 3, dark, 
+root - INFO - 4, dark right,  x17531
+root - INFO - 0, id left, 1883A
+root - INFO - 1, , Morning
+math
+root - INFO - 3, , 
+root - INFO - 4, right,  x17935
+root - INFO - 0, id dark left, 1882E2
+root - INFO - 1, dark, Two Permutations (Hard Version)
+constructive algorithms
+root - INFO - 3, dark, 
+root - INFO - 4, dark right,  x211
+root - INFO - 0, id left, 1882E1
+root - INFO - 1, , Two Permutations (Easy Version)
+brute force, constructive algorithms, greedy, number theory
+root - INFO - 3, , 
+root - INFO - 4, right,  x784
+root - INFO - 0, id dark left, 1882D
+root - INFO - 1, dark, Tree XOR
+bitmasks, dfs and similar, dp, greedy, trees
+root - INFO - 3, dark, 
+root - INFO - 4, dark right,  x3993
+root - INFO - 0, id left, 1882C
+root - INFO - 1, , Card Game
+brute force, greedy
+root - INFO - 3, , 
+root - INFO - 4, right,  x9132
+root - INFO - 0, id dark left, 1882B
+root - INFO - 1, dark, Sets and Union
+bitmasks, brute force, constructive algorithms, greedy
+root - INFO - 3, dark, 
+root - INFO - 4, dark right,  x11964
+root - INFO - 0, id left, 1882A
+root - INFO - 1, , Increasing Sequence
+greedy
+root - INFO - 3, , 
+root - INFO - 4, right,  x21611
+root - INFO - 0, id dark left, 1881G
+root - INFO - 1, dark, Anya and the Mysterious String
+binary search, data structures
+root - INFO - 3, dark, 
+root - INFO - 4, dark right,  x1627
+root - INFO - 0, id left, 1881F
+root - INFO - 1, , Minimum Maximum Distance
+dfs and similar, dp, graphs, shortest paths, trees
+root - INFO - 3, , 
+root - INFO - 4, right,  x4225
+root - INFO - 0, id dark left, 1881E
+root - INFO - 1, dark, Block Sequence
+dp
+root - INFO - 3, dark, 
+root - INFO - 4, dark right,  x8248
+root - INFO - 0, id left, 1881D
+root - INFO - 1, , Divide and Equalize
+math, number theory
+root - INFO - 3, , 
+root - INFO - 4, right,  x10373
+root - INFO - 0, id dark left, 1881C
+root - INFO - 1, dark, Perfect Square
+brute force, implementation
+root - INFO - 3, dark, 
+root - INFO - 4, dark right,  x12314
+root - INFO - 0, id left, 1881B
+root - INFO - 1, , Three Threadlets
+math
+root - INFO - 3, , 
+root - INFO - 4, right,  x18987
+root - INFO - 0, id dark left, 1881A
+root - INFO - 1, dark, Don't Try to Count
+brute force, strings
+root - INFO - 3, dark, 
+root - INFO - 4, dark right,  x20986
+root - INFO - 0, id left, 1879F
+root - INFO - 1, , Last Man Standing
+brute force, data structures, number theory
+root - INFO - 3, , 2800
+root - INFO - 4, right,  x391
+root - INFO - 0, id dark left, 1879E
+root - INFO - 1, dark, Interactive Game with Coloring
+brute force, constructive algorithms, dfs and similar, graphs, implementation, interactive, trees
+root - INFO - 3, dark, 2400
+root - INFO - 4, dark right,  x1004
+root - INFO - 0, id left, 1879D
+root - INFO - 1, , Sum of XOR Functions
+bitmasks, combinatorics, divide and conquer, dp, math
+root - INFO - 3, , 1700
+root - INFO - 4, right,  x5382
+root - INFO - 0, id dark left, 1879C
+root - INFO - 1, dark, Make it Alternating
+combinatorics, dp, greedy
+root - INFO - 3, dark, 1300
+root - INFO - 4, dark right,  x12212
