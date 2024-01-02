@@ -11,7 +11,7 @@ import logging
 
 logging.basicConfig(filename='problem.log', filemode='w', format='%(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 
-service = Service('/opt/homebrew/bin/chromedriver')
+service = Service('chromedriver-linux64/chromedriver')
 
 service.start()
 
@@ -59,6 +59,8 @@ while True:
                 problem_metadata['submission_page_link'] = submission_page_link
             logging.info(f'{idx}, {class_name}, {td.text}')
         problems.append(problem_metadata)
+        f = open('problems.json', 'w')
+        json.dump(problems, f, indent=4)
         
     next_button = driver.find_element(by=By.XPATH, value="//a[contains(text(), '→')]")
     if next_button:
