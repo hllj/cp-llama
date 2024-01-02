@@ -1,4 +1,5 @@
 import json
+import random
 import time
 
 from selenium import webdriver
@@ -10,6 +11,10 @@ from selenium.webdriver.support import expected_conditions as EC
 import logging
 
 logging.basicConfig(filename='problem.log', filemode='w', format='%(name)s - %(levelname)s - %(message)s', level=logging.INFO)
+
+def random_sleep(start, end):
+    time_sleep = random.uniform(start, end)
+    time.sleep(time_sleep)
 
 service = Service('chromedriver-linux64/chromedriver')
 
@@ -61,18 +66,12 @@ while True:
         problems.append(problem_metadata)
         f = open('problems.json', 'w')
         json.dump(problems, f, indent=4)
-        
+    
     next_button = driver.find_element(by=By.XPATH, value="//a[contains(text(), '→')]")
     if next_button:
         next_button_href = next_button.get_attribute('href')
         driver.get(next_button_href)
-        # try:
-        #     element = WebDriverWait(driver, 10).until(
-        #         EC.presence_of_element_located((By.XPATH, "//table[@class='problems']//tr"))
-        #     )
-        # finally:
-        #     driver.quit()
-        time.sleep(2)
+        random_sleep(1, 5)
     else:
         break
 
