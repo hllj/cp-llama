@@ -9,146 +9,183 @@ from selenium.webdriver.support import expected_conditions as EC
 
 from bs4 import BeautifulSoup, Tag
 
-service = Service('chromedriver-linux64/chromedriver')
+def extract_header(driver):
+    # Extract Header
 
-service.start()
+    header = driver.find_element(by=By.XPATH, value="//div[@class='problem-statement']/div[@class='header']")
 
-options = webdriver.ChromeOptions()
-options.add_argument('ignore-certificate-errors')
-options.add_argument('incognito')
-options.add_argument('--headless')
+    header_data = {}
 
-driver = webdriver.Chrome(service=service, options=options)
+    for idx, div in enumerate(header.find_elements(by=By.XPATH, value="./div")):
+        if div.get_attribute('class') == 'title':
+            header_data['title'] = div.text
+        
+        if div.get_attribute('class') != 'title':
+            key = div.find_element(by=By.XPATH, value="./div[@class='property-title']").text.strip()
+            value = div.text.replace(key, '').strip()
+            header_data[key] = value
+    return header_data
 
-driver.get('https://codeforces.com/problemset/problem/1895/G')
+def extract_problem_statement(driver):
+    # Extract Problem Statement
 
-# Extract Header
+    problem_statement = driver.find_elements(by=By.XPATH, value="//div[@class='problem-statement']/div")[1]
 
-header = driver.find_element(by=By.XPATH, value="//div[@class='problem-statement']/div[@class='header']")
+    soup = BeautifulSoup(problem_statement.get_attribute('innerHTML'), 'html.parser')
 
-header_data = {}
+    for mathjax_span in soup.find_all('span', {'class' : ['MathJax_Preview', 'MathJax']}):
+        mathjax_span.replace_with('')
 
-for idx, div in enumerate(header.find_elements(by=By.XPATH, value="./div")):
-    if div.get_attribute('class') == 'title':
-        header_data['title'] = div.text
+    for script in soup.find_all('script', {'type': 'math/tex'}):
+        text = '$' + script.get_text() + '$'
+        script.replace_with(text)
+
+    for div in soup.find_all('div', {'class': 'section-title'}):
+        div.replace_with('')
+
+    for li in soup.find_all('li'):
+        li.replace_with(li.get_text() + '\n')
+
+    return soup.get_text()
+
+def extract_input_format(driver):
+    # Extract Input Format
+    input = driver.find_element(by=By.XPATH, value="//div[@class='problem-statement']/div[@class='input-specification']")
+    soup = BeautifulSoup(input.get_attribute('innerHTML'), 'html.parser')
+
+    for mathjax_span in soup.find_all('span', {'class' : ['MathJax_Preview', 'MathJax']}):
+        mathjax_span.replace_with('')
+
+    for script in soup.find_all('script', {'type': 'math/tex'}):
+        text = '$' + script.get_text() + '$'
+        script.replace_with(text)
+
+    for div in soup.find_all('div', {'class': 'section-title'}):
+        div.replace_with('')
+
+    for li in soup.find_all('li'):
+        li.replace_with(li.get_text() + '\n')
+
+    return soup.get_text()
+
+def extract_output_format(driver):
+    #Extract Output Format
+    output = driver.find_element(by=By.XPATH, value="//div[@class='problem-statement']/div[@class='output-specification']")
+    soup = BeautifulSoup(output.get_attribute('innerHTML'), 'html.parser')
+
+    for mathjax_span in soup.find_all('span', {'class' : ['MathJax_Preview', 'MathJax']}):
+        mathjax_span.replace_with('')
+
+    for script in soup.find_all('script', {'type': 'math/tex'}):
+        text = '$' + script.get_text() + '$'
+        script.replace_with(text)
+
+    for div in soup.find_all('div', {'class': 'section-title'}):
+        div.replace_with('')
+
+    for li in soup.find_all('li'):
+        li.replace_with(li.get_text() + '\n')
     
-    if div.get_attribute('class') != 'title':
-        key = div.find_element(by=By.XPATH, value="./div[@class='property-title']").text.strip()
-        value = div.text.replace(key, '').strip()
-        header_data[key] = value
+    return soup.get_text()
 
-print('Header: ', header_data)
+def extract_sample_test(driver):
+    #Extract Sample Test Cases
+    sample_test = driver.find_element(by=By.XPATH, value="//div[@class='problem-statement']/div[@class='sample-tests']")
+    soup = BeautifulSoup(sample_test.get_attribute('innerHTML'), 'html.parser')
 
-# Extract Problem Statement
+    for div in soup.find_all('div', {'title': 'Copy'}):    
+        div.replace_with('')
 
-problem_statement = driver.find_elements(by=By.XPATH, value="//div[@class='problem-statement']/div")[1]
+    for mathjax_span in soup.find_all('span', {'class' : ['MathJax_Preview', 'MathJax']}):
+        mathjax_span.replace_with('')
 
-soup = BeautifulSoup(problem_statement.get_attribute('innerHTML'), 'html.parser')
+    for script in soup.find_all('script', {'type': 'math/tex'}):
+        text = '$' + script.get_text() + '$'
+        script.replace_with(text)
 
-for mathjax_span in soup.find_all('span', {'class' : ['MathJax_Preview', 'MathJax']}):
-    mathjax_span.replace_with('')
+    for div in soup.find_all('div', {'class': 'section-title'}):
+        div.replace_with(div.get_text() + '\n')
 
-for script in soup.find_all('script', {'type': 'math/tex'}):
-    text = '$' + script.get_text() + '$'
-    script.replace_with(text)
+    for div in soup.find_all('div', {'class': 'title'}):
+        div.replace_with(div.get_text() + '\n')
 
-for div in soup.find_all('div', {'class': 'section-title'}):
-    div.replace_with('')
+    for div in soup.find_all('div', {'class': 'test-example-line'}):
+        div.replace_with(div.get_text() + '\n')
 
-for li in soup.find_all('li'):
-    li.replace_with(li.get_text() + '\n')
+    for li in soup.find_all('li'):
+        li.replace_with(li.get_text() + '\n')
 
-print('Problem Statement:', soup.get_text())
+    return soup.get_text()
 
-# Extract Input Format
-input = driver.find_element(by=By.XPATH, value="//div[@class='problem-statement']/div[@class='input-specification']")
-soup = BeautifulSoup(input.get_attribute('innerHTML'), 'html.parser')
+def extract_note(driver):
+    #Extract Note
+    note = driver.find_element(by=By.XPATH, value="//div[@class='problem-statement']/div[@class='note']")
+    soup = BeautifulSoup(note.get_attribute('innerHTML'), 'html.parser')
 
-for mathjax_span in soup.find_all('span', {'class' : ['MathJax_Preview', 'MathJax']}):
-    mathjax_span.replace_with('')
+    for mathjax_span in soup.find_all('span', {'class' : ['MathJax_Preview', 'MathJax']}):
+        mathjax_span.replace_with('')
 
-for script in soup.find_all('script', {'type': 'math/tex'}):
-    text = '$' + script.get_text() + '$'
-    script.replace_with(text)
+    for script in soup.find_all('script', {'type': 'math/tex'}):
+        text = '$' + script.get_text() + '$'
+        script.replace_with(text)
 
-for div in soup.find_all('div', {'class': 'section-title'}):
-    div.replace_with('')
+    for div in soup.find_all('div', {'class': 'section-title'}):
+        div.replace_with(div.get_text() + '\n')
 
-for li in soup.find_all('li'):
-    li.replace_with(li.get_text() + '\n')
+    for div in soup.find_all('div', {'class': 'title'}):
+        div.replace_with(div.get_text() + '\n')
 
-print('Input:', soup.get_text())
+    for div in soup.find_all('div', {'class': 'test-example-line'}):
+        div.replace_with(div.get_text() + '\n')
 
-#Extract Output Format
-output = driver.find_element(by=By.XPATH, value="//div[@class='problem-statement']/div[@class='output-specification']")
-soup = BeautifulSoup(output.get_attribute('innerHTML'), 'html.parser')
+    for li in soup.find_all('li'):
+        li.replace_with(li.get_text() + '\n')
 
-for mathjax_span in soup.find_all('span', {'class' : ['MathJax_Preview', 'MathJax']}):
-    mathjax_span.replace_with('')
+    return soup.get_text()
 
-for script in soup.find_all('script', {'type': 'math/tex'}):
-    text = '$' + script.get_text() + '$'
-    script.replace_with(text)
+def crawl_problem_by_id(service, options, url):
+    driver = webdriver.Chrome(service=service, options=options)
 
-for div in soup.find_all('div', {'class': 'section-title'}):
-    div.replace_with('')
+    driver.get(url)
 
-for li in soup.find_all('li'):
-    li.replace_with(li.get_text() + '\n')
+    header_data = extract_header(driver)
 
-print('Output:', soup.get_text())
+    print('Header: ', header_data)
 
-#Extract Sample Test Cases
-sample_test = driver.find_element(by=By.XPATH, value="//div[@class='problem-statement']/div[@class='sample-tests']")
-soup = BeautifulSoup(sample_test.get_attribute('innerHTML'), 'html.parser')
+    problem_statement = extract_problem_statement(driver)
 
-for div in soup.find_all('div', {'title': 'Copy'}):    
-    div.replace_with('')
+    print('Problem Statement:', problem_statement)
 
-for mathjax_span in soup.find_all('span', {'class' : ['MathJax_Preview', 'MathJax']}):
-    mathjax_span.replace_with('')
+    input_format = extract_input_format(driver)
 
-for script in soup.find_all('script', {'type': 'math/tex'}):
-    text = '$' + script.get_text() + '$'
-    script.replace_with(text)
+    print('Input:', input_format)
 
-for div in soup.find_all('div', {'class': 'section-title'}):
-    div.replace_with(div.get_text() + '\n')
+    output_format = extract_output_format(driver)
 
-for div in soup.find_all('div', {'class': 'title'}):
-    div.replace_with(div.get_text() + '\n')
+    print('Output:', output_format)
 
-for div in soup.find_all('div', {'class': 'test-example-line'}):
-    div.replace_with(div.get_text() + '\n')
+    sample_test = extract_sample_test(driver)
 
-for li in soup.find_all('li'):
-    li.replace_with(li.get_text() + '\n')
+    print('Sample Test:', sample_test)
 
+    note = extract_note(driver)
 
-print('Sample Test:', soup.get_text())
+    print('Note:', note)
 
-#Extract Note
-note = driver.find_element(by=By.XPATH, value="//div[@class='problem-statement']/div[@class='note']")
-soup = BeautifulSoup(note.get_attribute('innerHTML'), 'html.parser')
+    driver.quit()
 
-for mathjax_span in soup.find_all('span', {'class' : ['MathJax_Preview', 'MathJax']}):
-    mathjax_span.replace_with('')
+    return header_data, problem_statement, input_format, output_format, sample_test, note
 
-for script in soup.find_all('script', {'type': 'math/tex'}):
-    text = '$' + script.get_text() + '$'
-    script.replace_with(text)
+if __name__ == '__main__':
+    service = Service('chromedriver-linux64/chromedriver')
 
-for div in soup.find_all('div', {'class': 'section-title'}):
-    div.replace_with(div.get_text() + '\n')
+    service.start()
 
-for div in soup.find_all('div', {'class': 'title'}):
-    div.replace_with(div.get_text() + '\n')
+    options = webdriver.ChromeOptions()
+    options.add_argument('ignore-certificate-errors')
+    options.add_argument('incognito')
+    options.add_argument('--headless')
 
-for div in soup.find_all('div', {'class': 'test-example-line'}):
-    div.replace_with(div.get_text() + '\n')
+    url = 'https://codeforces.com/problemset/problem/1917/E'
 
-for li in soup.find_all('li'):
-    li.replace_with(li.get_text() + '\n')
-
-
-print('Note:', soup.get_text())
+    header_data, problem_statement, input_format, output_format, sample_test, note = crawl_problem_by_id(service, options , url)
