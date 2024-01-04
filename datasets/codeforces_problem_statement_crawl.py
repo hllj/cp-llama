@@ -1,4 +1,5 @@
 import json
+import os
 import random
 import time
 
@@ -200,12 +201,18 @@ if __name__ == '__main__':
     f = open('problems.json', 'r')
     problems = json.load(f)
 
-    problem_statements = []
+    if os.path.exists('problem_statements.json'):
+        f = open('problem_statements.json', 'r')
+        problem_statements = json.load(f)
+    else:
+        problem_statements = []
 
     for problem in problems:
         url = problem['link']
+        if any(problem['id'] == problem_statement['id'] for problem_statement in problem_statements):
+            continue
         logging.info(f'Crawl problem statement {url}')
-        random_sleep(1, 5)
+        random_sleep(1, 3)
         header_data, problem_statement, input_format, output_format, sample_test, note = crawl_problem_by_id(service, options , url)
         problem_statements.append({
             'id': problem['id'],
